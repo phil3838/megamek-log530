@@ -15,6 +15,7 @@
 package megamek.server;
 
 import java.util.Vector;
+import megamek.server.gamehandler.GameManager;
 
 import megamek.common.Report;
 
@@ -30,5 +31,5 @@ public abstract class DynamicTerrainProcessor {
      * 
      * @param vPhaseReport reports for the server to send out
      */
-    abstract void doEndPhaseChanges(Vector<Report> vPhaseReport);
+    public abstract void doEndPhaseChanges(Vector<Report> vPhaseReport);
 }

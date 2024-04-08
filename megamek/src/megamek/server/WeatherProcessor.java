@@ -18,6 +18,7 @@ import java.util.Vector;
 
 import megamek.common.*;
 import megamek.common.planetaryconditions.PlanetaryConditions;
+import megamek.server.gamehandler.GameManager;
 import megamek.common.planetaryconditions.Wind;
 
 /**
@@ -47,7 +48,7 @@ public class WeatherProcessor extends DynamicTerrainProcessor {
     }
 
     @Override
-    void doEndPhaseChanges(Vector<Report> vPhaseReport) {
+    public void doEndPhaseChanges(Vector<Report> vPhaseReport) {
         game = gameManager.getGame();
         this.vPhaseReport = vPhaseReport;
         resolveWeather();
