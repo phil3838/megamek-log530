@@ -87,6 +87,8 @@ public final class Player extends TurnOrdered {
     private int constantInitBonus = 0;
     private int streakCompensationBonus = 0;
 
+    private double rating;
+
     private Camouflage camouflage = new Camouflage(Camouflage.COLOUR_CAMOUFLAGE, PlayerColour.BLUE.name());
     private PlayerColour colour = PlayerColour.BLUE;
 
@@ -103,6 +105,7 @@ public final class Player extends TurnOrdered {
     public Player(int id, String name) {
         this.name = name;
         this.id = id;
+        this.rating = 100;
     }
     //endregion Constructors
 
@@ -697,5 +700,13 @@ public final class Player extends TurnOrdered {
         copy.admitsDefeat = admitsDefeat;
 
         return copy;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }

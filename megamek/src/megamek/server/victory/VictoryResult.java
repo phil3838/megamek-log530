@@ -28,7 +28,7 @@ import java.util.Map;
  * A Victory Result stores player scores and a flag if a game-ending victory is achieved or not
  */
 public class VictoryResult {
-    protected boolean victory;
+    protected static boolean victory;
     protected Throwable tr;
     protected List<Report> reports = new ArrayList<>();
     protected Map<Integer, Double> playerScore = new HashMap<>();
@@ -36,12 +36,12 @@ public class VictoryResult {
     protected double hiScore = 0;
 
     protected VictoryResult(boolean win) {
-        this.victory = win;
+        victory = win;
         tr = new Throwable();
     }
-    
+
     protected VictoryResult(boolean win, int player, int team) {
-        this.victory = win;
+        victory = win;
         tr = new Throwable();
         if (player != Player.PLAYER_NONE) {
             addPlayerScore(player, 1.0);
@@ -135,12 +135,12 @@ public class VictoryResult {
      * @return true if the game is about to end since someone has completed
      *         the victory conditions
      */
-    public boolean victory() {
+    public static boolean victory() {
         return victory;
     }
 
     public void setVictory(boolean b) {
-        this.victory = b;
+        victory = b;
     }
 
     public double getPlayerScore(int id) {
