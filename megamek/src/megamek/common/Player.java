@@ -87,7 +87,7 @@ public final class Player extends TurnOrdered {
     private int constantInitBonus = 0;
     private int streakCompensationBonus = 0;
 
-    private double rating;
+    public double rating;
 
     private Camouflage camouflage = new Camouflage(Camouflage.COLOUR_CAMOUFLAGE, PlayerColour.BLUE.name());
     private PlayerColour colour = PlayerColour.BLUE;
