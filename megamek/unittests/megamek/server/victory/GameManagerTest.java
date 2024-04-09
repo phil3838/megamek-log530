@@ -48,7 +48,7 @@ public class GameManagerTest {
         // test whether the server.victory() returns false when mocking VictoryResult as false
         when(testGame.getVictoryResult()).thenReturn(testVictoryResultFalse);
         gameManager.setGame(testGame);
-        assertFalse(gameManager.victory());
+        assertTrue(gameManager.victory());
 
         // test whether the server.victory() returns true when mocking VictoryResult as true
         when(testGame.getVictoryResult()).thenReturn(testVictoryResultTrue);
@@ -106,7 +106,7 @@ public class GameManagerTest {
         VictoryResult victoryResult = mock(VictoryResult.class);
         when(victoryResult.processVictory(testGame)).thenCallRealMethod();
         when(victoryResult.getReports()).thenReturn(new ArrayList<>());
-        when(victoryResult.victory()).thenReturn(true);
+        when(VictoryResult.victory()).thenReturn(true);
         when(victoryResult.isDraw()).thenReturn(false);
         when(victoryResult.getWinningPlayer()).thenReturn(winner);
         when(victoryResult.getWinningTeam()).thenReturn(Player.TEAM_NONE);

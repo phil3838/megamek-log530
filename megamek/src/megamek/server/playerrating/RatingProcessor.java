@@ -3,7 +3,7 @@ package megamek.server.playerrating;
 import megamek.common.Player;
 import megamek.server.victory.VictoryResult;
 
-class RatingProcessor {
+public class RatingProcessor {
     private final RatingSystem ratingSystem = new ExampleRatingSystem();
 
     public void setPlayerRating(Player player, VictoryResult victoryResult) {
